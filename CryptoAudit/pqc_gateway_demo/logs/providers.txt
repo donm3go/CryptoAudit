@@ -1,0 +1,10 @@
+== Available providers ==
+Providers:
+  default
+    name: OpenSSL Default Provider
+    version: 3.6.0
+    status: active
+  oqsprovider
+    name: OpenSSL OQS Provider
+    version: 0.11.0
+    status: active

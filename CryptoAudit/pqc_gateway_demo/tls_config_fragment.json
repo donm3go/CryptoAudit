@@ -1,0 +1,11 @@
+{
+  "resource_id": "pqc-gateway-demo/local",
+  "resource_name": "pqc-gateway-demo (simulated API Gateway)",
+  "min_tls_version": "TLSv1.3",
+  "cipher_suites": [
+    "TLS_AES_256_GCM_SHA384"
+  ],
+  "key_exchange_groups": [
+    "SecP256r1MLKEM768"
+  ]
+}

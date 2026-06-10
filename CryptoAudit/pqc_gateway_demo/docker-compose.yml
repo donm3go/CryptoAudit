@@ -1,0 +1,16 @@
+services:
+  pqc-gateway:
+    image: openquantumsafe/oqs-ossl3:latest
+    container_name: pqc-gateway-demo
+    hostname: pqc-gateway
+    # Simulates the TLS-terminating endpoint of a cloud "API Gateway".
+    # AWS API Gateway/ALB/CloudFront cannot run a custom OpenSSL provider,
+    # so this container stands in for a self-managed gateway instance
+    # (e.g. an EC2 host behind a TCP-passthrough NLB) that can.
+    ports:
+      - "8443:8443"
+    volumes:
+      - ./scripts:/demo/scripts:ro
+      - ./certs:/demo/certs
+      - ./logs:/demo/logs
+    entrypoint: ["/bin/sh", "/demo/scripts/entrypoint-server.sh"]

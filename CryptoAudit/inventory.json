@@ -1,0 +1,133 @@
+{
+  "certificates": [
+    {
+      "resource_id": "kv:contoso-vault:cert/internal-svc",
+      "resource_name": "internal-svc.contoso.local",
+      "algorithm": "RSA",
+      "key_size": 4096,
+      "issuer": "ContosoCA",
+      "expires": "2027-07-15"
+    },
+    {
+      "resource_id": "arn:aws:acm:us-east-1:111122223333:certificate/bbb-222",
+      "resource_name": "legacy-vpn.shopcart.example.com",
+      "algorithm": "RSA",
+      "key_size": 1024,
+      "issuer": "InternalCA",
+      "expires": "2026-07-10"
+    },
+    {
+      "resource_id": "arn:aws:acm:eu-west-1:111122223333:certificate/ccc-333",
+      "resource_name": "edge.shopcart.example.com",
+      "algorithm": "ECDSA",
+      "key_size": 256,
+      "issuer": "Amazon",
+      "expires": "2027-04-06"
+    },
+    {
+      "resource_id": "kv:contoso-vault:cert/pqc-pilot",
+      "resource_name": "pilot.contoso.local",
+      "algorithm": "ML-DSA-65",
+      "key_size": null,
+      "issuer": "ContosoCA-PQC",
+      "expires": "2027-06-10"
+    },
+    {
+      "resource_id": "arn:aws:acm:us-east-1:111122223333:certificate/aaa-111",
+      "resource_name": "api.shopcart.example.com",
+      "algorithm": "RSA",
+      "key_size": 2048,
+      "issuer": "Amazon",
+      "expires": "2026-12-07"
+    }
+  ],
+  "ssh_keys": [
+    {
+      "resource_id": "ec2-keypair/admin-jump",
+      "resource_name": "admin-jump-key",
+      "key_type": "ECDSA",
+      "key_size": 384,
+      "attached_to": [
+        "i-0a1b2c3d4e5f60004 (jump-host)"
+      ]
+    },
+    {
+      "resource_id": "ec2-keypair/legacy-db",
+      "resource_name": "legacy-db-key",
+      "key_type": "DSA",
+      "key_size": 1024,
+      "attached_to": [
+        "i-0a1b2c3d4e5f60003 (db-archive)"
+      ]
+    },
+    {
+      "resource_id": "ec2-keypair/prod-bastion",
+      "resource_name": "prod-bastion-key",
+      "key_type": "RSA",
+      "key_size": 2048,
+      "attached_to": [
+        "i-0a1b2c3d4e5f60001 (bastion-host)"
+      ]
+    },
+    {
+      "resource_id": "ec2-keypair/build-agent",
+      "resource_name": "build-agent-key",
+      "key_type": "ED25519",
+      "key_size": 256,
+      "attached_to": [
+        "i-0a1b2c3d4e5f60002 (ci-runner-1)"
+      ]
+    }
+  ],
+  "tls_configs": [
+    {
+      "resource_id": "elbv2/app/legacy-api/def456",
+      "resource_name": "legacy-api-elb",
+      "min_tls_version": "TLS 1.0",
+      "cipher_suites": [
+        "TLS_RSA_WITH_3DES_EDE_CBC_SHA",
+        "TLS_RSA_WITH_RC4_128_SHA",
+        "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA"
+      ]
+    },
+    {
+      "resource_id": "lb/internal/analytics",
+      "resource_name": "analytics-internal-lb",
+      "min_tls_version": "TLS 1.2",
+      "cipher_suites": [
+        "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
+        "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256"
+      ]
+    },
+    {
+      "resource_id": "apigw/payments-api",
+      "resource_name": "payments-api-gateway",
+      "min_tls_version": "TLS 1.3",
+      "cipher_suites": [
+        "TLS_AES_256_GCM_SHA384",
+        "TLS_CHACHA20_POLY1305_SHA256"
+      ]
+    },
+    {
+      "resource_id": "elbv2/app/prod-frontend/abc123",
+      "resource_name": "prod-frontend-alb",
+      "min_tls_version": "TLS 1.2",
+      "cipher_suites": [
+        "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
+        "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
+        "TLS_RSA_WITH_AES_128_CBC_SHA"
+      ]
+    },
+    {
+      "resource_id": "pqc-gateway-demo/local",
+      "resource_name": "pqc-gateway-demo (simulated API Gateway)",
+      "min_tls_version": "TLSv1.3",
+      "cipher_suites": [
+        "TLS_AES_256_GCM_SHA384"
+      ],
+      "key_exchange_groups": [
+        "SecP256r1MLKEM768"
+      ]
+    }
+  ]
+}
