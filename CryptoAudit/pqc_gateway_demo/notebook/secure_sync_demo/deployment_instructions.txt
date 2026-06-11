@@ -1,0 +1,7 @@
+
+SECURE INFRASTRUCTURE DEPLOYMENT PLAN
+-------------------------------
+Primary Region: US-East
+Backup Region: Europe-West
+Disaster Recovery Sync: Enabled
+Internal Classification: Restricted
