@@ -1,0 +1,1 @@
+Here is a set of projects that I've created to help me further understand certain concepts in computer security and it's application in the real-world. Please feel free to suggest any further advancements albeit, they'll not likely be expanded too much as again, these are mostly academic.
